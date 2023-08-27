@@ -60,7 +60,7 @@ a:hover {
 	color: var(--accent);
 }
 
-img {
+i {
 	border-radius: 30px;
 	margin: 50px 2vw
 }
@@ -131,7 +131,7 @@ header {
 	top: 0px;
 	background-color: var(--secondary);
 	display: flex;
-	align-items: center;
+	height: 6rem;
 }
 
 .logo {
@@ -149,8 +149,8 @@ header {
 .menu-button {
 	transition: all .6s;
 	font-size: 1.1rem;
-	padding: 1rem 1vw;
-	margin: 5px;
+	padding: 1rem 1rem;
+	margin: 10px 5px;
 	color: var(--text);
 	text-decoration: none;
 }
@@ -167,6 +167,7 @@ header {
 }
 
 #burger-menu-button {
+	font-size: 2rem;
 	z-index: 2;
 	padding: 15px 30px;
 	background-color: var(--primary);
@@ -177,9 +178,11 @@ header {
 
 nav {
 	flex-direction: column;
-	align-items: start;
+	align-items: center;
 	transition: right 1s;
-	padding: 1rem;
+	padding: 2.2rem;
+	overflow-x: scroll;
+	white-space: nowrap;
 }
 
 .menu-open {
@@ -187,8 +190,8 @@ nav {
 	right: 0%;
 }
 
-@media(max-width:700px) {
-	nav {
+@media(max-width:750px) {
+	/* nav {
 		width: 50vw;
 		height: 100vh;
 		right: -100%;
@@ -196,11 +199,15 @@ nav {
 		background-color: color-mix(in srgb, var(--background) 50%, black 50%);
 		position: absolute;
 		display: none;
-	}
+	} */
 
-	#burger-menu-button {
+	/* #burger-menu-button {
 		width: 2rem;
 		display: block;
+	} */
+
+	.logo {
+		display: none;
 	}
 }
 
