@@ -41,7 +41,7 @@ main {
 	overflow: visible;
 }
 
-p>a {
+p>a, a.underline {
 	background: none;
 	color: var(--accent);
 	padding: initial;
