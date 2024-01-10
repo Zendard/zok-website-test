@@ -101,7 +101,7 @@ app.get('/delete/berichten/:name', authenticate,async(req,res)=>{
 });
 
 app.get('/refresh-list',async(req,res)=>{
-	await axios.get('https://axxon.be/kringsite/35-zuid-oost-vlaamse-kinesitherapeuten/leden/').then((res)=>{
+	await axios.get('https://axxon.be/kringsite/35-zuid-oost-vlaamse-kinesitherapeuten/leden/').catch((e)=>{console.log(e)}).then((res)=>{
 		const ledenDoc=res.data;
 		const $=load(ledenDoc);
 		const leden:string[][] = [];
@@ -113,6 +113,7 @@ app.get('/refresh-list',async(req,res)=>{
 		});
 		let ledenString = ledenSimple.join('</td></tr><tr><td>');
 		ledenString = '<tr><td>' + ledenString + '</td></tr>';
+console.log(ledenString)
 		Bun.write('./views/templates/lijst.ejs',ledenString);
 	});
 	res.redirect('/admin');
